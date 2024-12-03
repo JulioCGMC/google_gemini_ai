@@ -8,17 +8,20 @@ class GeminiHttpResponseCandidate {
 
   GeminiHttpResponseCandidate(
       {this.finishReason,
-      required this.index,
+      this.index = 0,
       this.content,
       required this.safetyRatings});
 
   /// Create a GeminiHttpResponseCandidate from a json
   factory GeminiHttpResponseCandidate.fromJson(Map<String, dynamic> json) {
     return GeminiHttpResponseCandidate(
-        finishReason: json['finishReason'],
-        index: json['index'],
-        content: json['content'],
-        safetyRatings: json['safetyRatings']);
+      finishReason:
+          json.containsKey('finishReason') ? json['finishReason'] : '',
+      index: json.containsKey('index') ? json['index'] : 0,
+      content: json.containsKey('content') ? json['content'] : {},
+      safetyRatings:
+          json.containsKey('safetyRatings') ? json['safetyRatings'] : [],
+    );
   }
 
   /// Convert a GeminiHttpResponseCandidate to a json

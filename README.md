@@ -1,13 +1,12 @@
-
 # Google DeepMind Gemini
 
 Google Gemini is a set of cutting-edge large language models (LLMs) designed to be the driving force behind Google's future AI initiatives.
 
-<img  alt="Gemini " src="https://raw.githubusercontent.com/ged-flod/google_gemini/main/assets/gemini.jpeg"/>
+<img  alt="Gemini " src="https://raw.githubusercontent.com/ged-flod/google_gemini_ai/main/assets/gemini.jpeg"/>
 
 This package provides a powerful bridge between your Flutter application and Google's revolutionary Gemini AI. It empowers you to seamlessly integrate Gemini's capabilities into your app, unlocking a world of possibilities for building innovative, intelligent, and engaging experiences that redefine user interaction.
 
-# Example 
+# Example
 
 <table>
   <tr>
@@ -19,7 +18,6 @@ This package provides a powerful bridge between your Flutter application and Goo
     </td>
   </tr>
 </table>
-
 
 ## Features
 
@@ -33,8 +31,6 @@ This package provides a powerful bridge between your Flutter application and Goo
 
 - [ ] [Gemini Response](#gemini-response)
 - [ ] [Gemini Methods](#gemini-methods)
-
-
 
 ## Getting started
 
@@ -50,7 +46,7 @@ final gemini = GoogleGemini(
 
 ## Generate content
 
-With Gemini you use both text and image data for prompting, depending on what model variation you use. 
+With Gemini you use both text and image data for prompting, depending on what model variation you use.
 
 For example, you can generate text using text prompt with the gemini-pro model and use both text and image data to prompt the gemini-pro-vision model
 
@@ -93,16 +89,16 @@ The most common model parameters are:
 
 1. **Max output tokens**: Specifies the maximum number of tokens that can be generated in the response. A token is approximately four characters. 100 tokens correspond to roughly 60-80 words.
 
-
 2. **Temperature**: The temperature controls the degree of randomness in token selection. Lower temperatures are good for prompts that require a more deterministic or less open-ended response, while higher temperatures can lead to more diverse or creative results.
 
-3. **topK**: The topK parameter changes how the model selects tokens for output. 
+3. **topK**: The topK parameter changes how the model selects tokens for output.
 
 4. **topP**: The topP parameter changes how the model selects tokens for output.
 
 5. **stop_sequences**: Set a stop sequence to tell the model to stop generating content. A stop sequence can be any sequence of characters. Try to avoid using a sequence of characters that may appear in the generated content.
 
 **Example**
+
 ```dart
 // Generation Configuration
 final config = GenerationConfig(
@@ -120,7 +116,6 @@ final gemini = GoogleGemini(
 );
 ```
 
-
 ### Safety settings
 
 Safety settings are part of the request you send to the text service. It can be adjusted for each request you make to the API.
@@ -128,7 +123,6 @@ Safety settings are part of the request you send to the text service. It can be 
 #### Categories
 
 These categories cover various kinds of harms that developers may wish to adjust.
-
 
 ```dart
 HARM_CATEGORY_UNSPECIFIED
@@ -141,19 +135,18 @@ HARM_CATEGORY_DANGEROUS
 HARM_CATEGORY_HARASSMENT
 HARM_CATEGORY_HATE_SPEECH
 HARM_CATEGORY_SEXUALLY_EXPLICIT
-HARM_CATEGORY_DANGEROUS_CONTENT	
+HARM_CATEGORY_DANGEROUS_CONTENT
 ```
 
 #### Threshold
 
 Block at and beyond a specified harm probability.
 
-
 ```dart
-HARM_BLOCK_THRESHOLD_UNSPECIFIED	
-BLOCK_LOW_AND_ABOVE	
+HARM_BLOCK_THRESHOLD_UNSPECIFIED
+BLOCK_LOW_AND_ABOVE
 BLOCK_MEDIUM_AND_ABOVE
-BLOCK_ONLY_HIGH	
+BLOCK_ONLY_HIGH
 BLOCK_NONE
 ```
 
@@ -173,10 +166,9 @@ final gemini = GoogleGemini(
   safetySettings: [
     safety1,
     // safety2
-  ]  
+  ]
 );
 ```
-
 
 ## Build multi-turn conversations
 
@@ -201,7 +193,3 @@ final gemini = GoogleGemini(
 ```dart
 // In progress
 ```
-
-
-
-

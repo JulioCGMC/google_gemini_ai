@@ -1,9 +1,9 @@
 import 'dart:io';
 
-import 'package:google_gemini/src/models/config/gemini_safety_settings.dart';
-import 'package:google_gemini/src/models/config/gemini_config.dart';
-import 'package:google_gemini/src/repository/apis.dart';
-import 'package:google_gemini/src/models/gemini/gemini_reponse.dart';
+import 'package:google_gemini_ai/src/models/config/gemini_safety_settings.dart';
+import 'package:google_gemini_ai/src/models/config/gemini_config.dart';
+import 'package:google_gemini_ai/src/repository/apis.dart';
+import 'package:google_gemini_ai/src/models/gemini/gemini_reponse.dart';
 
 /// Google Gemini Main Class.
 class GoogleGemini {
@@ -24,11 +24,11 @@ class GoogleGemini {
     String text = '';
 
     GeminiHttpResponse httpResponse = await apiGenerateText(
-        query: query,
-        apiKey: apiKey,
-        config: config,
-        safetySettings: safetySettings,
-        model: model ?? "gemini-pro",
+      query: query,
+      apiKey: apiKey,
+      config: config,
+      safetySettings: safetySettings,
+      model: model ?? "gemini-pro",
     );
 
     if (httpResponse.candidates.isNotEmpty) {
@@ -47,12 +47,12 @@ class GoogleGemini {
     String text = '';
 
     GeminiHttpResponse httpResponse = await apiGenerateTextAndImages(
-        query: query,
-        apiKey: apiKey,
-        image: image,
-        config: config,
-        safetySettings: safetySettings,
-        model: model ?? "gemini-pro-vision",
+      query: query,
+      apiKey: apiKey,
+      image: image,
+      config: config,
+      safetySettings: safetySettings,
+      model: model ?? "gemini-pro-vision",
     );
 
     if (httpResponse.candidates.isNotEmpty) {

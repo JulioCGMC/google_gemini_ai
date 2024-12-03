@@ -2,10 +2,10 @@ import 'dart:convert';
 import 'dart:developer';
 import 'dart:io';
 
-import 'package:google_gemini/src/config/constants.dart';
-import 'package:google_gemini/src/models/config/gemini_safety_settings.dart';
-import 'package:google_gemini/src/models/config/gemini_config.dart';
-import 'package:google_gemini/src/models/gemini/gemini_reponse.dart';
+import 'package:google_gemini_ai/src/config/constants.dart';
+import 'package:google_gemini_ai/src/models/config/gemini_safety_settings.dart';
+import 'package:google_gemini_ai/src/models/config/gemini_config.dart';
+import 'package:google_gemini_ai/src/models/gemini/gemini_reponse.dart';
 import 'package:http/http.dart' as http;
 
 /// Convert safetySettings List int a json
